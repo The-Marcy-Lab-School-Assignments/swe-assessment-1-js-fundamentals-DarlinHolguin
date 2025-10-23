@@ -7,7 +7,27 @@ Write your responses directly in this file. Follow markdown formatting guideline
 ## Section 1: Short Response
 
 ### Question 1
+The following block of code throws an error. Without running it:
 
+Identify the kind of error it throws:
+
+Explain why it is thrown.
+Suggest a fix to avoid the error
+
+```js
+
+const react = (isReuben) => {
+  if (isReuben) {
+    currentStatus = 'Everything is just fine';
+  } else {
+    currentStatus = 'Time to panic.'
+  }
+  return currentStatus
+
+}
+
+console.log(react(true));
+```
 
 ### Question 2
 
