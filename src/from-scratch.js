@@ -31,18 +31,15 @@ const petJudger = (petBreed, petName) => {
   }
 };
 
-
 // ============================================
 // Question 2: loopFromOneUpToAnother
 // ============================================
 
 const loopFromOneUpToAnother = (firstNum, secondNum) => {
   // Your code here
-  const numbers = []
   for (let i = firstNum; i < secondNum; i++) {
     console.log(i)
   }
-
 };
 
 // ============================================
@@ -53,7 +50,7 @@ const shoutEveryLetterForLoop = (str) => {
   // Your code here
   strChar = ''
   for (let i = 0; i < str.length; i++) {
-    console.log(str[i].toUpperCase() + '!')
+    console.log(`${str[i].toUpperCase()}!`)
   }
   return strChar
 };
@@ -65,18 +62,19 @@ shoutEveryLetterForLoop('');
 
 const letterCaseCounts = (str) => {
   // Your code here
-  freaky = {}
+  const freaky = { lowercase: 0, uppercase: 0, neither: 0 }
 
-  let lowercase = 0
-  let uppercase = 0
   for (let i = 0; i < str.length; i++) {
-    if (freaky[str[i]] === str.toLowerCase()) {
-
+    const char = str[i];
+    if (char >= 'a' && char <= 'z') {
+      freaky.lowercase += 1;
+    } else if (char >= 'A' && char <= 'Z') {
+      freaky.uppercase += 1
     } else {
-      freaky[str[i]] = 1
+      freaky.neither += 1
     }
   }
-  console.log(freaky)
+  return freaky;
 };
 letterCaseCounts('abCdef 123');
 // ============================================
@@ -85,24 +83,16 @@ letterCaseCounts('abCdef 123');
 
 const getNamesOfGreedyGnomes = (gnomes) => {
   // Your code here
-  const gardenGnomes = {
-    gnome1: {
-      name: 'Larililarila',
-      gardenCount: 2,
-      age: 407,
-      stolenDecorations: ['chair', 'water fountain'],
-    },
-    gnome2: {
-      name: 'Tungsahoor',
-      gardenCount: 2,
-      age: 407,
-      stolenDecorations: ['toilet',],
+  const greedyGnomes = [];
+
+  for (let i = 0; i < gnomes.length; i++) {
+    const gnome = gnomes[i];
+    if (gnome.stolenDecorations.length > 1) {
+      greedyGnomes.push(gnome.name)
     }
-
   }
-
-};
-
+  return greedyGnomes
+}
 
 // ============================================
 // Exports

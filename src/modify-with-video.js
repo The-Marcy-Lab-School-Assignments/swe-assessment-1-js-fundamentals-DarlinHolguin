@@ -31,8 +31,8 @@ const players = [
 ];
 
 const increaseScore = (name) => {
-  for (let i = 0; i <= players.length; i++) {
-    if (players[i].name = name) {
+  for (let i = 0; i < players.length; i++) { // this line used <= instead of <
+    if (players[i].name === name) { // this line used a singular = operator instead of a === comparison operator.
       players[i].score += 1;
     }
   }
@@ -48,13 +48,13 @@ const decreaseScore = (name) => {
 
 const resetAllScores = () => {
   for (let i = 0; i < players.length; i++) {
-    let player = players[i];
+    const player = players[i];
     resetSingleScore(player);
   }
 }
 
 const resetSingleScore = (player) => {
-  score = 0;
+  player.score = 0;// this line did not reference player utilizing dot notation to directly update the score of a specific player.
 }
 
 const getTopScorer = () => {
