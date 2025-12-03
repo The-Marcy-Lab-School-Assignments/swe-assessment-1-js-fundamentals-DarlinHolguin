@@ -15,6 +15,20 @@
 
 const petJudger = (petBreed, petName) => {
   // Your code here
+
+  if (petBreed === undefined || petName === undefined) {
+    console.log('Missing information. Please provide a valid pet.')
+  } else if (petBreed === 'dog') {
+    console.log(`I love dogs! ${petName} is so cute!`)
+  } else if (petBreed === 'cat') {
+    console.log(`I love cats! ${petName} is so cute!`)
+  } else if (petBreed === 'turtle') {
+    console.log(`Who doesn't love a good turtle? ${petName} is the tops.`)
+  } else if (petBreed === 'snake') {
+    console.log(`Not a fan, please take ${petName} and leave.`)
+  } else {
+    console.log(`What an...interesting pet.`)
+  }
 };
 
 // ============================================
@@ -23,6 +37,9 @@ const petJudger = (petBreed, petName) => {
 
 const loopFromOneUpToAnother = (firstNum, secondNum) => {
   // Your code here
+  for (let i = firstNum; i < secondNum; i++) {
+    console.log(i)
+  }
 };
 
 // ============================================
@@ -31,23 +48,51 @@ const loopFromOneUpToAnother = (firstNum, secondNum) => {
 
 const shoutEveryLetterForLoop = (str) => {
   // Your code here
+  strChar = ''
+  for (let i = 0; i < str.length; i++) {
+    console.log(`${str[i].toUpperCase()}!`)
+  }
+  return strChar
 };
-
+shoutEveryLetterForLoop('hey');
+shoutEveryLetterForLoop('');
 // ============================================
 // Question 4: letterCaseCounts
 // ============================================
 
 const letterCaseCounts = (str) => {
   // Your code here
-};
+  const freaky = { lowercase: 0, uppercase: 0, neither: 0 }
 
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if (char >= 'a' && char <= 'z') {
+      freaky.lowercase += 1;
+    } else if (char >= 'A' && char <= 'Z') {
+      freaky.uppercase += 1
+    } else {
+      freaky.neither += 1
+    }
+  }
+  return freaky;
+};
+letterCaseCounts('abCdef 123');
 // ============================================
 // Question 5: getNamesOfGreedyGnomes
 // ============================================
 
 const getNamesOfGreedyGnomes = (gnomes) => {
   // Your code here
-};
+  const greedyGnomes = [];
+
+  for (let i = 0; i < gnomes.length; i++) {
+    const gnome = gnomes[i];
+    if (gnome.stolenDecorations.length > 1) {
+      greedyGnomes.push(gnome.name)
+    }
+  }
+  return greedyGnomes
+}
 
 // ============================================
 // Exports
